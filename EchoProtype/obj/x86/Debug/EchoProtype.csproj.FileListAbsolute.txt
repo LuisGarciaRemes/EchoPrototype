@@ -603,3 +603,4 @@ C:\Users\u0764291\echo\EchoPrototype-TempVersion0826\EchoProtype\bin\Windows\x86
 C:\Users\u0764291\echo\EchoPrototype-TempVersion0826\EchoProtype\bin\Windows\x86\Debug\Content\Sprites\obstacle2.xnb
 C:\Users\u0764291\echo\EchoPrototype-TempVersion0826\EchoProtype\bin\Windows\x86\Debug\Content\Sprites\obstacle3.xnb
 C:\Users\u0764291\echo\EchoPrototype-TempVersion0826\EchoProtype\bin\Windows\x86\Debug\EchoProtype.exe.config
+C:\Users\u0764291\echo\EchoPrototype-TempVersion0826\EchoProtype\bin\Windows\x86\Debug\Content\Sprites\echo.xnb

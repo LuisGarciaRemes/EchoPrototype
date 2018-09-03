@@ -15,7 +15,7 @@ namespace EchoProtype
     {
         public static GameContent instance;
 
-        public Texture2D imgBrick { get; set; }
+        public Texture2D imgEcho { get; set; }
         public Texture2D imgSquare { get; set; }
         public Texture2D imgTitle { get; set; }
         public Texture2D imgGameOver { get; set; }
@@ -36,7 +36,6 @@ namespace EchoProtype
         public List<Texture2D> blackEchoList { get; set; }
 
         public List<Texture2D> batList { get; set; }
-        public Texture2D imgStag { get; set; }
         public Song songbg { get; set; }
 
         public GameContent(ContentManager Content)
@@ -52,7 +51,7 @@ namespace EchoProtype
             foregroundTexture = Content.Load<Texture2D>("Sprites/newSight");
             blacksmall = Content.Load<Texture2D>("Sprites/black");
             redheart = Content.Load<Texture2D>("Sprites/redheart");
-            imgStag = Content.Load<Texture2D>("Sprites/vertbrick");
+            imgEcho = Content.Load<Texture2D>("Sprites/Echo");
             imgStalagmite1 = Content.Load<Texture2D>("Sprites/obstacle1");
             imgStalagmite2 = Content.Load<Texture2D>("Sprites/obstacle2");
             imgStalactite1 = Content.Load<Texture2D>("Sprites/flippedobstacle1");

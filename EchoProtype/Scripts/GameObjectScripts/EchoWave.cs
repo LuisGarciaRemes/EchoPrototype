@@ -80,7 +80,7 @@ namespace EchoProtype
             {
                 spriteBatch.Begin();
 
-                spriteBatch.Draw(GameContent.instance.imgStag, collisionRectangles[0], Color.Yellow);
+                spriteBatch.Draw(GameContent.instance.imgEcho, collisionRectangles[0], Color.White);
 
                 spriteBatch.End();
             }
