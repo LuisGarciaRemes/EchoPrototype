@@ -28,6 +28,8 @@ namespace EchoProtype
         public Texture2D imgfloatingRock { get; set; }
         public SpriteFont labelFont { get; set; }
         public SoundEffect echoAmb { get; set; }
+        public SoundEffect echoCast { get; set; }
+        public SoundEffect echoHitObsticle { get; set; }
 
         public Texture2D foregroundTexture { get; set; }
    
@@ -57,7 +59,10 @@ namespace EchoProtype
             imgStalactite1 = Content.Load<Texture2D>("Sprites/flippedobstacle1");
             imgStalactite2 = Content.Load<Texture2D>("Sprites/flippedobstacle2");
             imgfloatingRock = Content.Load<Texture2D>("Sprites/obstacle3");
-            songbg = Content.Load<Song>("SoundEffects/bgsound");            
+            songbg = Content.Load<Song>("SoundEffects/bgsound");
+            // TODO: replace the files when new sound effects were added
+            echoCast = Content.Load<SoundEffect>("SoundEffects/echolocation01");
+            echoHitObsticle = Content.Load<SoundEffect>("SoundEffects/BrickSound");
 
             blackEchoList = new List<Texture2D>();
             for (var i = 0; i < 3; i++)

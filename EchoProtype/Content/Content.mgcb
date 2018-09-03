@@ -362,3 +362,9 @@
 /processorParam:TextureFormat=Color
 /build:Sprites/echo.png
 
+#begin SoundEffects/echolocation01.mp3
+/importer:Mp3Importer
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:SoundEffects/echolocation01.mp3
+
