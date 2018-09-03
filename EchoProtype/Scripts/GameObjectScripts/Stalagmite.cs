@@ -122,30 +122,29 @@ namespace EchoProtype
                     gameManager.soundEffects[1].CreateInstance().Play();
                 }
 
-                    // collision pushes player in the direction opposite of their movement.
-                    if (newKeyboardState.IsKeyDown(Keys.Left))
-                    {
-                        player.MoveRight();
-                        player.MoveRight();
-                        player.MoveRight();
-                    }
-                    if (newKeyboardState.IsKeyDown(Keys.Up))
-                    {                      
-                        player.MoveLeft();
-                        player.MoveLeft();
-                        player.MoveDown();
-                    }
-                    if (newKeyboardState.IsKeyDown(Keys.Down))
-                    {
-                        player.MoveLeft();
-                        player.MoveLeft();
-                        player.MoveUp();
-                    }
-                    else
-                    {
-                        player.MoveLeft();
-                        player.MoveLeft();
-                    }
+                //    // collision pushes player in the direction opposite of their movement.
+                //    if (newKeyboardState.IsKeyDown(Keys.Left))
+                //    {
+                //        player.MoveRight();
+                //       // player.MoveRight();
+                //        //player.MoveRight();
+                //    }
+                //    if (newKeyboardState.IsKeyDown(Keys.Up))
+                //    {                      
+                //        player.MoveLeft();
+                //        player.MoveLeft();
+                //}
+                //    if (newKeyboardState.IsKeyDown(Keys.Down))
+                //    {
+                //        player.MoveLeft();
+                //        player.MoveLeft();
+                //}
+                //    else
+                //    {
+                //        player.MoveLeft();
+                //        player.MoveLeft();
+                //    }
+                player.pushBack(7);
             }
 
             for (int i = 0; i < player.echoWaves.Count; i++)
@@ -156,7 +155,7 @@ namespace EchoProtype
                         visionTimer = (float)gameTime.TotalGameTime.TotalMilliseconds;
                         Visible = true;
                         var hitSound = GameContent.instance.echoHitObsticle.CreateInstance();
-                        hitSound.Volume = 0.2f;
+                        hitSound.Volume = 0.1f;
                         hitSound.Play();
                     }
             }

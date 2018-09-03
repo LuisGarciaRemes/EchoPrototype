@@ -142,7 +142,7 @@ namespace EchoProtype
 
             Move();
             Sway();
-            VisionCheck(gameTime);
+            //VisionCheck(gameTime);
 
 
             if (X <= -50)

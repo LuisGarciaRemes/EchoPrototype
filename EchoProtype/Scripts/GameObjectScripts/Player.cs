@@ -261,6 +261,11 @@ namespace EchoProtype
             X = X - 5;
 
         }
+        public void pushBack(int push)
+        {
+            X = X - push;
+
+        }
         public void MoveUp()
         {
             Y = Y - 5;
@@ -301,7 +306,7 @@ namespace EchoProtype
                 echoWave.parent = this;
                 echoWave.spriteBatch = spriteBatch;
                 var castSound = GameContent.instance.echoCast.CreateInstance();
-                castSound.Volume = 0.3f;
+                castSound.Volume = 0.2f;
                 castSound.Play();
             }
         }

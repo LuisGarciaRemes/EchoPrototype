@@ -116,8 +116,11 @@ namespace EchoProtype
         {
             for (int i = 0; i < consumables.Length; i++)
             {
-               consumables[i].Destroyed = true;
+                float X = rand.Next(minX, maxX);
+                float Y = rand.Next(minY, maxY);
+                consumables[i] = new Consumable((int)X, (int)Y, speed, RandomType(), gameManager);
             }
+            counter = 0;
         }
     }
 }
