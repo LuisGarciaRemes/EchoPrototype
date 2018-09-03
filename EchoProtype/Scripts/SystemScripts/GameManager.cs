@@ -68,9 +68,9 @@ namespace EchoProtype
             backGround = new RollingBackGround();
             backGround.Load(spriteBatch, gameContent);
 
-            MediaPlayer.Play(gameContent.songbg);
+            MediaPlayer.Play(GameContent.instance.songTitle);
 
-            MediaPlayer.MediaStateChanged += MediaPlayer_MediaStateChanged;
+            MediaPlayer.MediaStateChanged += MediaPlayer_MediaStateChangedTitle;
 
             //obstacle code!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
             obstacleSpawner = new ObstacleSpawner(50, screenWidth, screenWidth - 100, screenHeight-100, -200, 700, 200, 9, this);
@@ -80,11 +80,18 @@ namespace EchoProtype
             soundEffects.Add(Content.Load<SoundEffect>("hit01"));
         }
 
-        void MediaPlayer_MediaStateChanged(object sender, System.EventArgs e)
+        void MediaPlayer_MediaStateChangedGame(object sender, System.EventArgs e)
         {
             // 0.0f is silent, 1.0f is full volume
             MediaPlayer.Volume -= 0.1f;
             MediaPlayer.Play(gameContent.songbg);
+        }
+
+        void MediaPlayer_MediaStateChangedTitle(object sender, System.EventArgs e)
+        {
+            // 0.0f is silent, 1.0f is full volume
+            MediaPlayer.Volume -= 0.1f;
+            MediaPlayer.Play(GameContent.instance.songTitle);
         }
 
         protected override void UnloadContent()
@@ -115,6 +122,7 @@ namespace EchoProtype
                 if (!gameStart)
                 {
                     gameStart = true;
+                    MediaPlayer.Play(GameContent.instance.songbg);
                 }
                 else
                 {
@@ -148,6 +156,8 @@ namespace EchoProtype
             if (!gameStart)
             {
                 scoreManager.flytime = gameTime.TotalGameTime.Seconds;
+
+
 
                 spriteBatch.Begin();
 
