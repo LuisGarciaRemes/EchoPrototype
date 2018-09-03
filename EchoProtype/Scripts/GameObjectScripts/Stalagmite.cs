@@ -157,6 +157,9 @@ namespace EchoProtype
                     {
                         visionTimer = (float)gameTime.TotalGameTime.TotalMilliseconds;
                         Visible = true;
+                        var hitSound = GameContent.instance.echoHitObsticle.CreateInstance();
+                        hitSound.Volume = 0.2f;
+                        hitSound.Play();
                     }
             }
 

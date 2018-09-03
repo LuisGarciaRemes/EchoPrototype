@@ -69,7 +69,6 @@ namespace EchoProtype
             else
             {
                 parent.removeList.Add(this);
-                Console.WriteLine("EchoWave: remove");
             }
         }
 

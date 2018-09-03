@@ -160,6 +160,7 @@ namespace EchoProtype
                 if (gameManager.gameStart && !gameManager.gameOver)
                 {
                     CreateEchoWave(gameTime);
+                    GameContent.instance.echoCast.CreateInstance().Play();
                 }
             }
         }
