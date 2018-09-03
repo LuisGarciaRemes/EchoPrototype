@@ -4,38 +4,39 @@
   <Platform>Windows</Platform>
   <Config />
   <SourceFiles>
-    <File>C:/Users/u0764291/echo/EchoPrototype-TempVersion0826/EchoProtype/Content/SoundEffects/bgsound.mp3</File>
-    <File>C:/Users/u0764291/echo/EchoPrototype-TempVersion0826/EchoProtype/Content/SoundEffects/BrickSound.wav</File>
-    <File>C:/Users/u0764291/echo/EchoPrototype-TempVersion0826/EchoProtype/Content/SoundEffects/echoAmb.wav</File>
-    <File>C:/Users/u0764291/echo/EchoPrototype-TempVersion0826/EchoProtype/Content/SoundEffects/echosound.mp3</File>
-    <File>C:/Users/u0764291/echo/EchoPrototype-TempVersion0826/EchoProtype/Content/SoundEffects/hit01.mp3</File>
-    <File>C:/Users/u0764291/echo/EchoPrototype-TempVersion0826/EchoProtype/Content/SoundEffects/StartSound.wav</File>
-    <File>C:/Users/u0764291/echo/EchoPrototype-TempVersion0826/EchoProtype/Content/SoundEffects/wings.mp3</File>
-    <File>C:/Users/u0764291/echo/EchoPrototype-TempVersion0826/EchoProtype/Content/Sprites/bat01.png</File>
-    <File>C:/Users/u0764291/echo/EchoPrototype-TempVersion0826/EchoProtype/Content/Sprites/bat02.png</File>
-    <File>C:/Users/u0764291/echo/EchoPrototype-TempVersion0826/EchoProtype/Content/Sprites/bat03.png</File>
-    <File>C:/Users/u0764291/echo/EchoPrototype-TempVersion0826/EchoProtype/Content/Sprites/bat04.png</File>
-    <File>C:/Users/u0764291/echo/EchoPrototype-TempVersion0826/EchoProtype/Content/Sprites/black.png</File>
-    <File>C:/Users/u0764291/echo/EchoPrototype-TempVersion0826/EchoProtype/Content/Sprites/black01.png</File>
-    <File>C:/Users/u0764291/echo/EchoPrototype-TempVersion0826/EchoProtype/Content/Sprites/black02.png</File>
-    <File>C:/Users/u0764291/echo/EchoPrototype-TempVersion0826/EchoProtype/Content/Sprites/black03.png</File>
-    <File>C:/Users/u0764291/echo/EchoPrototype-TempVersion0826/EchoProtype/Content/Sprites/FG.png</File>
-    <File>C:/Users/u0764291/echo/EchoPrototype-TempVersion0826/EchoProtype/Content/Sprites/gameoverscreen.png</File>
-    <File>C:/Users/u0764291/echo/EchoPrototype-TempVersion0826/EchoProtype/Content/Sprites/newSight.jpg</File>
-    <File>C:/Users/u0764291/echo/EchoPrototype-TempVersion0826/EchoProtype/Content/Sprites/obstacle 5.png</File>
-    <File>C:/Users/u0764291/echo/EchoPrototype-TempVersion0826/EchoProtype/Content/Sprites/obstacle1.png</File>
-    <File>C:/Users/u0764291/echo/EchoPrototype-TempVersion0826/EchoProtype/Content/Sprites/obstacle2.png</File>
-    <File>C:/Users/u0764291/echo/EchoPrototype-TempVersion0826/EchoProtype/Content/Sprites/obstacle3.png</File>
-    <File>C:/Users/u0764291/echo/EchoPrototype-TempVersion0826/EchoProtype/Content/Sprites/obstacle4.png</File>
-    <File>C:/Users/u0764291/echo/EchoPrototype-TempVersion0826/EchoProtype/Content/Sprites/powerupfirefly.png</File>
-    <File>C:/Users/u0764291/echo/EchoPrototype-TempVersion0826/EchoProtype/Content/Sprites/powerupfruit.png</File>
-    <File>C:/Users/u0764291/echo/EchoPrototype-TempVersion0826/EchoProtype/Content/Sprites/redheart.png</File>
-    <File>C:/Users/u0764291/echo/EchoPrototype-TempVersion0826/EchoProtype/Content/Sprites/sightBlocker.jpg</File>
-    <File>C:/Users/u0764291/echo/EchoPrototype-TempVersion0826/EchoProtype/Content/Sprites/Title.png</File>
-    <File>C:/Users/u0764291/echo/EchoPrototype-TempVersion0826/EchoProtype/Content/Sprites/vertbrick.png</File>
-    <File>C:/Users/u0764291/echo/EchoPrototype-TempVersion0826/EchoProtype/Content/Fonts/Arial20.spritefont</File>
-    <File>C:/Users/u0764291/echo/EchoPrototype-TempVersion0826/EchoProtype/Content/Sprites/flippedobstacle1.png</File>
-    <File>C:/Users/u0764291/echo/EchoPrototype-TempVersion0826/EchoProtype/Content/Sprites/flippedobstacle2.png</File>
-    <File>C:/Users/u0764291/echo/EchoPrototype-TempVersion0826/EchoProtype/Content/Sprites/echo.png</File>
+    <File>C:/Users/u1091197/Documents/GitWorkSpace/EchoPrototype/EchoProtype/Content/SoundEffects/bgsound.mp3</File>
+    <File>C:/Users/u1091197/Documents/GitWorkSpace/EchoPrototype/EchoProtype/Content/SoundEffects/BrickSound.wav</File>
+    <File>C:/Users/u1091197/Documents/GitWorkSpace/EchoPrototype/EchoProtype/Content/SoundEffects/echoAmb.wav</File>
+    <File>C:/Users/u1091197/Documents/GitWorkSpace/EchoPrototype/EchoProtype/Content/SoundEffects/echosound.mp3</File>
+    <File>C:/Users/u1091197/Documents/GitWorkSpace/EchoPrototype/EchoProtype/Content/SoundEffects/hit01.mp3</File>
+    <File>C:/Users/u1091197/Documents/GitWorkSpace/EchoPrototype/EchoProtype/Content/SoundEffects/StartSound.wav</File>
+    <File>C:/Users/u1091197/Documents/GitWorkSpace/EchoPrototype/EchoProtype/Content/SoundEffects/wings.mp3</File>
+    <File>C:/Users/u1091197/Documents/GitWorkSpace/EchoPrototype/EchoProtype/Content/Sprites/bat01.png</File>
+    <File>C:/Users/u1091197/Documents/GitWorkSpace/EchoPrototype/EchoProtype/Content/Sprites/bat02.png</File>
+    <File>C:/Users/u1091197/Documents/GitWorkSpace/EchoPrototype/EchoProtype/Content/Sprites/bat03.png</File>
+    <File>C:/Users/u1091197/Documents/GitWorkSpace/EchoPrototype/EchoProtype/Content/Sprites/bat04.png</File>
+    <File>C:/Users/u1091197/Documents/GitWorkSpace/EchoPrototype/EchoProtype/Content/Sprites/black.png</File>
+    <File>C:/Users/u1091197/Documents/GitWorkSpace/EchoPrototype/EchoProtype/Content/Sprites/black01.png</File>
+    <File>C:/Users/u1091197/Documents/GitWorkSpace/EchoPrototype/EchoProtype/Content/Sprites/black02.png</File>
+    <File>C:/Users/u1091197/Documents/GitWorkSpace/EchoPrototype/EchoProtype/Content/Sprites/black03.png</File>
+    <File>C:/Users/u1091197/Documents/GitWorkSpace/EchoPrototype/EchoProtype/Content/Sprites/FG.png</File>
+    <File>C:/Users/u1091197/Documents/GitWorkSpace/EchoPrototype/EchoProtype/Content/Sprites/gameoverscreen.png</File>
+    <File>C:/Users/u1091197/Documents/GitWorkSpace/EchoPrototype/EchoProtype/Content/Sprites/newSight.jpg</File>
+    <File>C:/Users/u1091197/Documents/GitWorkSpace/EchoPrototype/EchoProtype/Content/Sprites/obstacle 5.png</File>
+    <File>C:/Users/u1091197/Documents/GitWorkSpace/EchoPrototype/EchoProtype/Content/Sprites/obstacle1.png</File>
+    <File>C:/Users/u1091197/Documents/GitWorkSpace/EchoPrototype/EchoProtype/Content/Sprites/obstacle2.png</File>
+    <File>C:/Users/u1091197/Documents/GitWorkSpace/EchoPrototype/EchoProtype/Content/Sprites/obstacle3.png</File>
+    <File>C:/Users/u1091197/Documents/GitWorkSpace/EchoPrototype/EchoProtype/Content/Sprites/obstacle4.png</File>
+    <File>C:/Users/u1091197/Documents/GitWorkSpace/EchoPrototype/EchoProtype/Content/Sprites/powerupfirefly.png</File>
+    <File>C:/Users/u1091197/Documents/GitWorkSpace/EchoPrototype/EchoProtype/Content/Sprites/powerupfruit.png</File>
+    <File>C:/Users/u1091197/Documents/GitWorkSpace/EchoPrototype/EchoProtype/Content/Sprites/redheart.png</File>
+    <File>C:/Users/u1091197/Documents/GitWorkSpace/EchoPrototype/EchoProtype/Content/Sprites/sightBlocker.jpg</File>
+    <File>C:/Users/u1091197/Documents/GitWorkSpace/EchoPrototype/EchoProtype/Content/Sprites/Title.png</File>
+    <File>C:/Users/u1091197/Documents/GitWorkSpace/EchoPrototype/EchoProtype/Content/Sprites/vertbrick.png</File>
+    <File>C:/Users/u1091197/Documents/GitWorkSpace/EchoPrototype/EchoProtype/Content/Fonts/Arial20.spritefont</File>
+    <File>C:/Users/u1091197/Documents/GitWorkSpace/EchoPrototype/EchoProtype/Content/Sprites/flippedobstacle1.png</File>
+    <File>C:/Users/u1091197/Documents/GitWorkSpace/EchoPrototype/EchoProtype/Content/Sprites/flippedobstacle2.png</File>
+    <File>C:/Users/u1091197/Documents/GitWorkSpace/EchoPrototype/EchoProtype/Content/Sprites/echo.png</File>
+    <File>C:/Users/u1091197/Documents/GitWorkSpace/EchoPrototype/EchoProtype/Content/SoundEffects/echolocation01.mp3</File>
   </SourceFiles>
 </SourceFileCollection>
