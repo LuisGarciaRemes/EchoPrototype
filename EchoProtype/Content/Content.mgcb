@@ -25,12 +25,6 @@
 /processorParam:Quality=Best
 /build:SoundEffects/BrickSound.wav
 
-#begin SoundEffects/echoAmb.wav
-/importer:WavImporter
-/processor:SoundEffectProcessor
-/processorParam:Quality=Best
-/build:SoundEffects/echoAmb.wav
-
 #begin SoundEffects/echosound.mp3
 /importer:Mp3Importer
 /processor:SongProcessor
@@ -367,4 +361,10 @@
 /processor:SoundEffectProcessor
 /processorParam:Quality=Best
 /build:SoundEffects/echolocation01.mp3
+
+#begin SoundEffects/echoAmb.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:SoundEffects/echoAmb.wav
 
