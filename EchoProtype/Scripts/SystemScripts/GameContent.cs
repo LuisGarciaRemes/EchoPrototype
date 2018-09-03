@@ -61,7 +61,7 @@ namespace EchoProtype
             imgfloatingRock = Content.Load<Texture2D>("Sprites/obstacle3");
             songbg = Content.Load<Song>("SoundEffects/bgsound");
             // TODO: replace the files when new sound effects were added
-            echoCast = Content.Load<SoundEffect>("SoundEffects/BrickSound");
+            echoCast = Content.Load<SoundEffect>("SoundEffects/echolocation01");
             echoHitObsticle = Content.Load<SoundEffect>("SoundEffects/BrickSound");
 
             blackEchoList = new List<Texture2D>();

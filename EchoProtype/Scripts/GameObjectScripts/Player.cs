@@ -160,7 +160,6 @@ namespace EchoProtype
                 if (gameManager.gameStart && !gameManager.gameOver)
                 {
                     CreateEchoWave(gameTime);
-                    GameContent.instance.echoCast.CreateInstance().Play();
                 }
             }
         }
@@ -301,6 +300,9 @@ namespace EchoProtype
                 echoWaves.Add(echoWave);
                 echoWave.parent = this;
                 echoWave.spriteBatch = spriteBatch;
+                var castSound = GameContent.instance.echoCast.CreateInstance();
+                castSound.Volume = 0.3f;
+                castSound.Play();
             }
         }
     }
