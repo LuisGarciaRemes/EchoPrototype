@@ -26,7 +26,7 @@ namespace EchoProtype
         public float speed;
         public bool Destroyed { get; set; } //does brick still exist?
         public bool Visible { get; set; }
-        private Rectangle hitBox;
+        public Rectangle hitBox;
 
         public int damage { get; set; }
 
@@ -97,7 +97,8 @@ namespace EchoProtype
 
         public void Update(GameTime gameTime)
         {
-            Move();
+            hitBox = new Rectangle((int)X, (int)Y, (int)(Width), (int)(Height));
+            Move();       
 
             KeyboardState newKeyboardState = Keyboard.GetState();
 
@@ -194,7 +195,6 @@ namespace EchoProtype
             if (!Destroyed)
             {
                 X -= speed;
-                hitBox.X = (int)(X - speed);
             }
         }
             public void assignImage()

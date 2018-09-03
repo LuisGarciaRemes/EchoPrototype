@@ -119,7 +119,10 @@ namespace EchoProtype
 
                 if (Health)
                 {
-                    player.Health += 1;
+                    if (player.Health < 5)
+                    {
+                        player.Health += 1;
+                    }
                     Visible = false;
                     Destroyed = true;
                 }

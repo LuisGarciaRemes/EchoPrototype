@@ -62,7 +62,7 @@ namespace EchoProtype
             X = x;
             Y = y;
             Width = 20;//change
-            Height = 15;
+            Height = 10;
             Health = 5;
 
 
