@@ -13,12 +13,6 @@
 
 #---------------------------------- Content ---------------------------------#
 
-#begin SoundEffects/bgsound.mp3
-/importer:Mp3Importer
-/processor:SongProcessor
-/processorParam:Quality=Best
-/build:SoundEffects/bgsound.mp3
-
 #begin SoundEffects/BrickSound.wav
 /importer:WavImporter
 /processor:SoundEffectProcessor
@@ -373,4 +367,22 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:Sprites/sadheart.png
+
+#begin SoundEffects/bgsound.mp3
+/importer:Mp3Importer
+/processor:SongProcessor
+/processorParam:Quality=Best
+/build:SoundEffects/bgsound.mp3
+
+#begin SoundEffects/fireflypickup.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:SoundEffects/fireflypickup.wav
+
+#begin SoundEffects/fruitpickup.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:SoundEffects/fruitpickup.wav
 

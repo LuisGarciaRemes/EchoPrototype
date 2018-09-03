@@ -112,6 +112,9 @@ namespace EchoProtype
                 if (Points)
                 {
                     scoreManager.AddPoints(numPoints);
+                    var hitSound = GameContent.instance.fireflypickup.CreateInstance();
+                    hitSound.Volume = 1f;
+                    hitSound.Play();
                     Visible = false;
                     Destroyed = true;
 
@@ -123,6 +126,9 @@ namespace EchoProtype
                     {
                         player.Health += 1;
                     }
+                    var hitSound = GameContent.instance.fruitpickup.CreateInstance();
+                    hitSound.Volume = 1f;
+                    hitSound.Play();
                     Visible = false;
                     Destroyed = true;
                 }

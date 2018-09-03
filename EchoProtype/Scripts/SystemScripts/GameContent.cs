@@ -30,6 +30,8 @@ namespace EchoProtype
         public SoundEffect echoAmb { get; set; }
         public SoundEffect echoCast { get; set; }
         public SoundEffect echoHitObsticle { get; set; }
+        public SoundEffect fireflypickup { get; set; }
+        public SoundEffect fruitpickup { get; set; }
 
         public Texture2D foregroundTexture { get; set; }
    
@@ -45,7 +47,6 @@ namespace EchoProtype
         {
             instance = this;
 
-            echoAmb = Content.Load<SoundEffect>("SoundEffects/echoAmb");
             labelFont = Content.Load<SpriteFont>("Fonts/Arial20");
             imgTitle = Content.Load<Texture2D>("Sprites/Title");
             imgFireFly = Content.Load<Texture2D>("Sprites/powerupfirefly");
@@ -65,6 +66,8 @@ namespace EchoProtype
             // TODO: replace the files when new sound effects were added
             echoCast = Content.Load<SoundEffect>("SoundEffects/echolocation01");
             echoHitObsticle = Content.Load<SoundEffect>("SoundEffects/BrickSound");
+            fireflypickup = Content.Load<SoundEffect>("SoundEffects/fireflypickup");
+            fruitpickup= Content.Load<SoundEffect>("SoundEffects/fruitpickup");
 
             blackEchoList = new List<Texture2D>();
             for (var i = 0; i < 3; i++)
