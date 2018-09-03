@@ -34,6 +34,9 @@ namespace EchoProtype
 
         private Point _heartImageSize { get; set; }
 
+        private Texture2D _sadheartpic { get; set; }
+        private Point _sadheartImageSize { get; set; }
+
         private float _imageChangeSpan = 0.1f;
         private float _lastChangeTime { get; set; }
 
@@ -46,6 +49,8 @@ namespace EchoProtype
         private Color batColor { get; set; }//change
 
         public bool hurt;
+
+        int count;
 
         Stack<Rectangle> locations = new Stack<Rectangle>();
         public float echoCoolDown = 1f;
@@ -75,6 +80,9 @@ namespace EchoProtype
 
             _heartpic = gameManager.gameContent.redheart;
             _heartImageSize = new Point(_heartpic.Width, _heartpic.Height);
+
+            _sadheartpic = GameContent.instance.sadheart;
+            _sadheartImageSize = new Point(_sadheartpic.Width, _sadheartpic.Height);
 
             _lastChangeTime = 0;
 
@@ -186,7 +194,7 @@ namespace EchoProtype
 
                 var heartDestinationRec = new Rectangle();
                 var heartSize = new Point(100, 100);
-                heartDestinationRec.X = (int)batDestinationRec.X;
+                heartDestinationRec.X = (int)batDestinationRec.X - 20;
                 heartDestinationRec.Y = (int)batDestinationRec.Y - 80;
                 heartDestinationRec.Width = 20;
                 heartDestinationRec.Height = 20;
@@ -239,8 +247,10 @@ namespace EchoProtype
                 spriteBatch.End();
 
                 spriteBatch.Begin();
+                count = 0;
                 foreach (Rectangle rec in locations)
                 {
+                    count++;
                     spriteBatch.Draw(_heartpic,
                         rec,
                         null,
@@ -251,6 +261,28 @@ namespace EchoProtype
                         0f
                         );
                 }
+                if (Health < 5)
+                {
+                    for(var i = 5 - count; i > 0; i--)
+                    {
+                        Rectangle rec2 =
+                            new Rectangle(
+                                heartDestinationRec.X + 20 * (5 - i),
+                                heartDestinationRec.Y,
+                                heartDestinationRec.Width,
+                                heartDestinationRec.Height
+                                );
+                        spriteBatch.Draw(_sadheartpic,
+                            rec2,
+                            null,
+                            Color.White,
+                            _rotationAngle,
+                            new Vector2(_sadheartImageSize.X / 2, _sadheartImageSize.Y / 2),
+                            SpriteEffects.None,
+                            0f);
+                    }
+                }
+
                 spriteBatch.End();
                 this.locations = new Stack<Rectangle>();
             }

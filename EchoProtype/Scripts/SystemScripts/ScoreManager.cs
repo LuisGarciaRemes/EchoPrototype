@@ -36,7 +36,7 @@ namespace EchoProtype
             }
             scoreMsg += currenttime;
             Vector2 stringSpace = gameContent.labelFont.MeasureString(scoreMsg);
-            spriteBatch.DrawString(gameContent.labelFont, scoreMsg, new Vector2((screenWidth - stringSpace.X) - 100, screenHeight - 100), Color.White);
+            spriteBatch.DrawString(gameContent.labelFont, scoreMsg, new Vector2(60, 40), Color.White);
         }
 
         public void AddPoints(int points)
