@@ -35,6 +35,7 @@ namespace EchoProtype
    
         public Texture2D blacksmall { get; set; }
         public Texture2D redheart { get; set; }
+        public Texture2D sadheart { get; set; }
         public List<Texture2D> blackEchoList { get; set; }
 
         public List<Texture2D> batList { get; set; }
@@ -53,6 +54,7 @@ namespace EchoProtype
             foregroundTexture = Content.Load<Texture2D>("Sprites/newSight");
             blacksmall = Content.Load<Texture2D>("Sprites/black");
             redheart = Content.Load<Texture2D>("Sprites/redheart");
+            sadheart = Content.Load<Texture2D>("Sprites/sadheart");
             imgEcho = Content.Load<Texture2D>("Sprites/Echo");
             imgStalagmite1 = Content.Load<Texture2D>("Sprites/obstacle1");
             imgStalagmite2 = Content.Load<Texture2D>("Sprites/obstacle2");
