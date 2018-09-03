@@ -20,6 +20,7 @@ namespace EchoProtype
         private int maxTime;
         private int minTime;
         private int speed;
+        private int orgSpeed;
         private int counter;
         private float spawnTimer;
         private float deltaTime;
@@ -36,6 +37,7 @@ namespace EchoProtype
             this.minY = minY;
             this.maxY = maxY;
             this.speed = speed;
+            orgSpeed = speed;
             this.gameManager = gameManager;
             obstacles = new Stalagmite[totalNumObs];
             rand = new Random();
@@ -107,8 +109,12 @@ namespace EchoProtype
         {
             for (int i = 0; i < obstacles.Length; i++)
             {
-                obstacles[i].Destroyed = true;
+                float X = rand.Next(minX, maxX);
+                float Y = rand.Next(minY, maxY);
+
+                obstacles[i] = new Stalagmite((float)X, (float)Y, orgSpeed, gameManager);
             }
+            counter = 0;
         }
     }
 }

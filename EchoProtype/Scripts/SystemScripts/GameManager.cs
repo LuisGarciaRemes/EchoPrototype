@@ -128,6 +128,8 @@ namespace EchoProtype
                     player.Destroyed = false;
                     player.X = 250;
                     player.Y = 350;
+                    player.canTakeDamage = true;
+                    player.hurt = false;
                     scoreManager.resetScore(gameTime);
                     obstacleSpawner.reset();
                     consumableSpawner.reset();                   
