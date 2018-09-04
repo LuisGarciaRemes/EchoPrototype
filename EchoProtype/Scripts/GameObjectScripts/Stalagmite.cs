@@ -22,6 +22,7 @@ namespace EchoProtype
         private float dmgDelayTime { get; set; }
         private float visionTimer { get; set; }
         private float visionDelayTime { get; set; }
+        private int grayScale { get; set; }
 
         public float speed;
         public bool Destroyed { get; set; } //does brick still exist?
@@ -78,12 +79,13 @@ namespace EchoProtype
 
             dmgDelayTime = 750;
             damageTimer = 0;
-            visionDelayTime = 1000;
+            visionDelayTime = 1500;
             visionTimer = 0;
             this.spriteBatch = gameManager.spriteBatch;
             hitBox = new Rectangle((int)X, (int)Y, (int)(Width), (int)(Height));// Rectangle for the wall collider
             Destroyed = true;
             Visible = false;
+            grayScale = 255;
             this.gameManager = gameManager;
         }
 
@@ -91,7 +93,10 @@ namespace EchoProtype
         {
             if (!Destroyed && Visible)
             {
-                spriteBatch.Draw(imgStag, new Vector2(X, Y), null, Color.White, 0, new Vector2(0, 0), 1.0f, SpriteEffects.None, 0);
+                var newColor = new Color(grayScale, grayScale, grayScale, 255);
+                
+
+                spriteBatch.Draw(imgStag, new Vector2(X, Y), null, newColor, 0, new Vector2(0, 0), 1.0f, SpriteEffects.None, 0);
             }
         }
 
@@ -160,7 +165,7 @@ namespace EchoProtype
                     }
             }
 
-            VisionCheck(gameTime);
+            VisionUpdate(gameTime);
         }
 
         private bool HitTest(Rectangle r1, Rectangle r2)
@@ -175,13 +180,15 @@ namespace EchoProtype
             }
         }
 
-        private void VisionCheck(GameTime gameTime)
+        private void VisionUpdate(GameTime gameTime)
         {
             if (Visible)
             {
+                grayScale = 255 - (int)(((float)gameTime.TotalGameTime.TotalMilliseconds - visionTimer) / 1000 * 255);
                 if (gameTime.TotalGameTime.TotalMilliseconds >= visionTimer + visionDelayTime)
                 {
                     Visible = false;
+                    grayScale = 255;
                 }
             }
         }

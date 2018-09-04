@@ -27,7 +27,6 @@ namespace EchoProtype
         public Texture2D imgStalactite2 { get; set; }
         public Texture2D imgfloatingRock { get; set; }
         public SpriteFont labelFont { get; set; }
-        public SoundEffect echoAmb { get; set; }
         public SoundEffect echoCast { get; set; }
         public SoundEffect echoHitObsticle { get; set; }
         public SoundEffect fireflypickup { get; set; }
@@ -42,6 +41,8 @@ namespace EchoProtype
 
         public List<Texture2D> batList { get; set; }
         public Song songbg { get; set; }
+        public Song songTitle { get; set;
+        }
 
         public GameContent(ContentManager Content)
         {
@@ -63,6 +64,7 @@ namespace EchoProtype
             imgStalactite2 = Content.Load<Texture2D>("Sprites/flippedobstacle2");
             imgfloatingRock = Content.Load<Texture2D>("Sprites/obstacle3");
             songbg = Content.Load<Song>("SoundEffects/bgsound");
+            songTitle = Content.Load<Song>("SoundEffects/Echo Title Screen");
             // TODO: replace the files when new sound effects were added
             echoCast = Content.Load<SoundEffect>("SoundEffects/echolocation01");
             echoHitObsticle = Content.Load<SoundEffect>("SoundEffects/BrickSound");

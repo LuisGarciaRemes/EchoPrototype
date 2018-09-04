@@ -13,6 +13,12 @@
 
 #---------------------------------- Content ---------------------------------#
 
+#begin SoundEffects/bgsound.mp3
+/importer:Mp3Importer
+/processor:SongProcessor
+/processorParam:Quality=Best
+/build:SoundEffects/bgsound.mp3
+
 #begin SoundEffects/BrickSound.wav
 /importer:WavImporter
 /processor:SoundEffectProcessor
@@ -368,11 +374,11 @@
 /processorParam:TextureFormat=Color
 /build:Sprites/sadheart.png
 
-#begin SoundEffects/bgsound.mp3
+#begin SoundEffects/Echo Title Screen.mp3
 /importer:Mp3Importer
 /processor:SongProcessor
 /processorParam:Quality=Best
-/build:SoundEffects/bgsound.mp3
+/build:SoundEffects/Echo Title Screen.mp3
 
 #begin SoundEffects/fireflypickup.wav
 /importer:WavImporter
