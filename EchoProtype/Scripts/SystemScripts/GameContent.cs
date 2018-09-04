@@ -30,6 +30,7 @@ namespace EchoProtype
         public SpriteFont labelFont { get; set; }
         public SoundEffect echoCast { get; set; }
         public SoundEffect echoHitObsticle { get; set; }
+        public SoundEffect slowSound { get; set; }
         public SoundEffect fireflypickup { get; set; }
         public SoundEffect fruitpickup { get; set; }
 
@@ -70,6 +71,7 @@ namespace EchoProtype
             // TODO: replace the files when new sound effects were added
             echoCast = Content.Load<SoundEffect>("SoundEffects/echolocation01");
             echoHitObsticle = Content.Load<SoundEffect>("SoundEffects/BrickSound");
+            slowSound = Content.Load<SoundEffect>("SoundEffects/slow");
             fireflypickup = Content.Load<SoundEffect>("SoundEffects/fireflypickup");
             fruitpickup= Content.Load<SoundEffect>("SoundEffects/fruitpickup");
 

@@ -151,18 +151,25 @@ namespace EchoProtype
                     {
                         player.Health -= damage;
                         player.hurt = true;
+                        gameManager.soundEffects[1].CreateInstance().Play();
+                    }
+                    else
+                    {
+                        var hitSound = GameContent.instance.slowSound.CreateInstance();
+                        hitSound.Volume = 1f;
+                        hitSound.Play();
                     }
                         damageTimer = (float)gameTime.TotalGameTime.TotalMilliseconds;
                         player.canTakeDamage = false;                                        
-                    gameManager.soundEffects[1].CreateInstance().Play();
                 }
 
                 if(sticky)
                 {
-                    player.pushBack(10);
+                    player.pushBack(11);
                 }
-                else {
-                player.pushBack(7);
+                else
+                {
+                    player.pushBack(7);
                 }
             }
 

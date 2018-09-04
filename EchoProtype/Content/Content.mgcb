@@ -392,3 +392,9 @@
 /processorParam:Quality=Best
 /build:SoundEffects/fruitpickup.wav
 
+#begin SoundEffects/slow.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:SoundEffects/slow.wav
+
