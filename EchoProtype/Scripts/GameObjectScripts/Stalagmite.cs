@@ -28,6 +28,7 @@ namespace EchoProtype
         public bool Destroyed { get; set; } //does brick still exist?
         public bool Visible { get; set; }
         public Rectangle hitBox;
+        public Rectangle hitBox2;
         private Random rand;
 
         private int damage { get; set; }
@@ -48,7 +49,7 @@ namespace EchoProtype
             sticky = false;
             player = gameManager.player;
             this.rand = rand;
-            if (Y > -10 && Y < 400)
+            if (Y > -10 && Y < 420)
             {
                 switch (rand.Next(0, 2))
                 {
@@ -109,7 +110,30 @@ namespace EchoProtype
             visionDelayTime = 1500;
             visionTimer = 0;
             this.spriteBatch = gameManager.spriteBatch;
-            hitBox = new Rectangle((int)X, (int)Y, (int)(Width), (int)(Height));// Rectangle for the wall collider
+
+            if (imgStag == gameManager.gameContent.imgfloatingRock || imgStag == gameManager.gameContent.imgfloatingTangles)
+            {
+                hitBox = new Rectangle((int)X, (int)Y, (int)(Width), (int)(Height));// Rectangle for the wall collider
+            }
+            else if(imgStag == gameManager.gameContent.imgStalactite1)
+            {
+                hitBox = new Rectangle((int)X+7, (int)Y, 74, (int)(Height));// Rectangle for the wall collider
+            }
+            else if (imgStag == gameManager.gameContent.imgStalagmite1)
+            {
+                hitBox = new Rectangle((int)X - 7, (int)Y, 74, (int)(Height));// Rectangle for the wall collider
+            }
+            else if (imgStag == gameManager.gameContent.imgStalactite2)
+            {
+                hitBox = new Rectangle((int)X+78, (int)Y, 78, (int)(Height));// Rectangle for the wall collider
+                hitBox2 = new Rectangle((int)X, (int)Y, 78, 200);// Rectangle for the wall collider
+            }
+            else if (imgStag == gameManager.gameContent.imgStalagmite2)
+            {
+                hitBox = new Rectangle((int)X, (int)Y, 78, (int)(Height));// Rectangle for the wall collider
+                hitBox2 = new Rectangle((int)X+78, (int)Y, 78, 200);// Rectangle for the wall collider
+            }
+
             Destroyed = true;
             Visible = false;
             grayScale = 255;
@@ -129,7 +153,29 @@ namespace EchoProtype
 
         public void Update(GameTime gameTime)
         {
-            hitBox = new Rectangle((int)X, (int)Y, (int)(Width), (int)(Height));
+            if (imgStag == gameManager.gameContent.imgfloatingRock || imgStag == gameManager.gameContent.imgfloatingTangles)
+            {
+                hitBox = new Rectangle((int)X, (int)Y, (int)(Width), (int)(Height));// Rectangle for the wall collider
+            }
+            else if (imgStag == gameManager.gameContent.imgStalactite1)
+            {
+                hitBox = new Rectangle((int)X + 7, (int)Y, 74, (int)(Height));// Rectangle for the wall collider
+            }
+            else if (imgStag == gameManager.gameContent.imgStalagmite1)
+            {
+                hitBox = new Rectangle((int)X - 7, (int)Y, 74, (int)(Height));// Rectangle for the wall collider
+            }
+            else if (imgStag == gameManager.gameContent.imgStalactite2)
+            {
+                hitBox = new Rectangle((int)X + 78, (int)Y, 78, (int)(Height));// Rectangle for the wall collider
+                hitBox2 = new Rectangle((int)X, (int)Y, 78, 200);// Rectangle for the wall collider
+            }
+            else if (imgStag == gameManager.gameContent.imgStalagmite2)
+            {
+                hitBox = new Rectangle((int)X, (int)Y, 78, (int)(Height));// Rectangle for the wall collider
+                hitBox2 = new Rectangle((int)X + 78, (int)Y, 78, 200);// Rectangle for the wall collider
+            }
+
             Move();
 
             KeyboardState newKeyboardState = Keyboard.GetState();
@@ -142,7 +188,7 @@ namespace EchoProtype
             }
 
             //checks for collisions  against the player        
-            if (!Destroyed && HitTest(player.playerRect, hitBox))
+            if (!Destroyed && HitTest(player.playerRect, hitBox) || ((imgStag == gameManager.gameContent.imgStalagmite2 || imgStag == gameManager.gameContent.imgStalactite2) && !Destroyed && HitTest(player.playerRect, hitBox2)))
             {
                 //makes player take damage
                 if (player.canTakeDamage)
@@ -223,7 +269,7 @@ namespace EchoProtype
         }
         public void assignImage()
         {
-            if (Y > -10 && Y < 400)
+            if (Y > -10 && Y < 420)
             {
                 switch (rand.Next(0, 2))
                 {
