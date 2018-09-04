@@ -28,8 +28,10 @@ namespace EchoProtype
         public bool Destroyed { get; set; } //does brick still exist?
         public bool Visible { get; set; }
         public Rectangle hitBox;
+        private Random rand;
 
-        public int damage { get; set; }
+        private int damage { get; set; }
+        public bool sticky { get; set; }
 
         private GameManager gameManager;
 
@@ -37,44 +39,69 @@ namespace EchoProtype
         private SpriteBatch spriteBatch;  //allows us to write on backbuffer when we need to draw self
         private Player player;
 
-        public Stalagmite(float x, float y, float speed, GameManager gameManager)
+        public Stalagmite(float x, float y, float speed, GameManager gameManager, Random rand)
         {
             X = x;
             Y = y;
             this.speed = speed;
             damage = 1;
+            sticky = false;
             player = gameManager.player;
-
-            if (Y > -10 && Y < 450)
+            this.rand = rand;
+            if (Y > -10 && Y < 400)
             {
-                imgStag = gameManager.gameContent.imgfloatingRock;
+                switch (rand.Next(0, 2))
+                {
+                    case 0:
+                        {
+                            imgStag = gameManager.gameContent.imgfloatingRock;
+                            break;
+                        }
+
+                    case 1:
+                        {
+                            imgStag = gameManager.gameContent.imgfloatingTangles;
+                            sticky = true;
+                            break;
+                        }
+                }
             }
             else if (Y <= -10)
             {
-                int choice = new Random().Next(0, 2);
-                if (choice == 0)
+                switch (rand.Next(0,2))
                 {
-                    imgStag = gameManager.gameContent.imgStalactite1;
-                }
-                else
-                {
-                    imgStag = gameManager.gameContent.imgStalactite2;
+                    case 0:
+                        {
+                            imgStag = gameManager.gameContent.imgStalactite1;
+                            break;
+                        }
+
+                    case 1:
+                        {
+                            imgStag = gameManager.gameContent.imgStalactite2;
+                            break;
+                        }
                 }
             }
             else
             {
-                int choice = new Random().Next(0, 2);
-                if (choice == 0)
+                switch (rand.Next(0, 2))
                 {
-                    imgStag = gameManager.gameContent.imgStalagmite1;
-                }
-                else
-                {
-                    imgStag = gameManager.gameContent.imgStalagmite2;
+                    case 0:
+                        {
+                            imgStag = gameManager.gameContent.imgStalagmite1;
+                            break;
+                        }
+
+                    case 1:
+                        {
+                            imgStag = gameManager.gameContent.imgStalagmite2;
+                            break;
+                        }
                 }
             }
 
-                Width = imgStag.Width;
+            Width = imgStag.Width;
             Height = imgStag.Height;
 
             dmgDelayTime = 750;
@@ -94,7 +121,7 @@ namespace EchoProtype
             if (!Destroyed && Visible)
             {
                 var newColor = new Color(grayScale, grayScale, grayScale, 255);
-                
+
 
                 spriteBatch.Draw(imgStag, new Vector2(X, Y), null, newColor, 0, new Vector2(0, 0), 1.0f, SpriteEffects.None, 0);
             }
@@ -103,7 +130,7 @@ namespace EchoProtype
         public void Update(GameTime gameTime)
         {
             hitBox = new Rectangle((int)X, (int)Y, (int)(Width), (int)(Height));
-            Move();       
+            Move();
 
             KeyboardState newKeyboardState = Keyboard.GetState();
 
@@ -120,36 +147,23 @@ namespace EchoProtype
                 //makes player take damage
                 if (player.canTakeDamage)
                 {
-                    player.Health -= damage;
-                    damageTimer = (float)gameTime.TotalGameTime.TotalMilliseconds;
-                    player.canTakeDamage = false;
-                    player.hurt = true;
+                    if (!sticky)
+                    {
+                        player.Health -= damage;
+                        player.hurt = true;
+                    }
+                        damageTimer = (float)gameTime.TotalGameTime.TotalMilliseconds;
+                        player.canTakeDamage = false;                                        
                     gameManager.soundEffects[1].CreateInstance().Play();
                 }
 
-                //    // collision pushes player in the direction opposite of their movement.
-                //    if (newKeyboardState.IsKeyDown(Keys.Left))
-                //    {
-                //        player.MoveRight();
-                //       // player.MoveRight();
-                //        //player.MoveRight();
-                //    }
-                //    if (newKeyboardState.IsKeyDown(Keys.Up))
-                //    {                      
-                //        player.MoveLeft();
-                //        player.MoveLeft();
-                //}
-                //    if (newKeyboardState.IsKeyDown(Keys.Down))
-                //    {
-                //        player.MoveLeft();
-                //        player.MoveLeft();
-                //}
-                //    else
-                //    {
-                //        player.MoveLeft();
-                //        player.MoveLeft();
-                //    }
+                if(sticky)
+                {
+                    player.pushBack(10);
+                }
+                else {
                 player.pushBack(7);
+                }
             }
 
             for (int i = 0; i < player.echoWaves.Count; i++)
@@ -200,33 +214,59 @@ namespace EchoProtype
                 X -= speed;
             }
         }
-            public void assignImage()
+        public void assignImage()
+        {
+            if (Y > -10 && Y < 400)
             {
-            int choice = new Random().Next(0, 2);
-            if (Y > -10 && Y < 450)
-            {
-                imgStag = gameManager.gameContent.imgfloatingRock;
+                switch (rand.Next(0, 2))
+                {
+                    case 0:
+                        {
+                            imgStag = gameManager.gameContent.imgfloatingRock;
+                            break;
+                        }
+
+                    case 1:
+                        {
+                            imgStag = gameManager.gameContent.imgfloatingTangles;
+                            sticky = true;
+                            break;
+                        }
+                }
+
             }
             else if (Y <= -10)
-            {             
-                if (choice == 0)
+            {
+                switch (rand.Next(0, 2))
                 {
-                    imgStag = gameManager.gameContent.imgStalactite1;
-                }
-                else if(choice == 1)
-                {
-                    imgStag = gameManager.gameContent.imgStalactite2;
+                    case 0:
+                        {
+                            imgStag = gameManager.gameContent.imgStalactite1;
+                            break;
+                        }
+
+                    case 1:
+                        {
+                            imgStag = gameManager.gameContent.imgStalactite2;
+                            break;
+                        }
                 }
             }
             else
             {
-                if (choice == 0)
+                switch (rand.Next(0, 2))
                 {
-                    imgStag = gameManager.gameContent.imgStalagmite1;
-                }
-                else if (choice == 1)
-                {
-                    imgStag = gameManager.gameContent.imgStalagmite2;
+                    case 0:
+                        {
+                            imgStag = gameManager.gameContent.imgStalagmite1;
+                            break;
+                        }
+
+                    case 1:
+                        {
+                            imgStag = gameManager.gameContent.imgStalagmite2;
+                            break;
+                        }
                 }
             }
         }

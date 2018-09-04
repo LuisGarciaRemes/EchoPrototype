@@ -61,7 +61,7 @@ namespace EchoProtype
             {
                 if (consumables[i].X < -50)
                 {
-                    consumables[i].Destroyed = true;
+                    consumables[i].Destroyed = true;                    
                 }
             }
 

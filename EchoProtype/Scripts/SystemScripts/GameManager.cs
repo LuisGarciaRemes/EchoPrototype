@@ -25,6 +25,7 @@ namespace EchoProtype
         private ConsumableSpawner consumableSpawner;
         public Scoremanager scoreManager;
         public List<SoundEffect> soundEffects;
+        public GameTime gameTime;
 
         public GameManager()
         {
@@ -32,6 +33,7 @@ namespace EchoProtype
             graphics.GraphicsProfile = GraphicsProfile.HiDef;
             Content.RootDirectory = "Content";
             soundEffects = new List<SoundEffect>();
+            gameTime = new GameTime();
         }
 
         protected override void Initialize()

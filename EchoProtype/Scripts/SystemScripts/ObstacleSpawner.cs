@@ -48,7 +48,7 @@ namespace EchoProtype
                 float X = rand.Next(minX, maxX);
                 float Y = rand.Next(minY, maxY);
 
-                obstacles[i] = new Stalagmite((float)X,(float)Y,speed,gameManager);
+                obstacles[i] = new Stalagmite((float)X,(float)Y,speed,gameManager, rand);
             }
         }
         public void Draw()
@@ -65,7 +65,8 @@ namespace EchoProtype
             {
                 if (obstacles[i].X < -50)
                 {
-                    obstacles[i].Destroyed = true;                  
+                    obstacles[i].Destroyed = true;
+                    obstacles[i].sticky = false;
                 }
             }
 
@@ -112,7 +113,7 @@ namespace EchoProtype
                 float X = rand.Next(minX, maxX);
                 float Y = rand.Next(minY, maxY);
 
-                obstacles[i] = new Stalagmite((float)X, (float)Y, orgSpeed, gameManager);
+                obstacles[i] = new Stalagmite((float)X, (float)Y, orgSpeed, gameManager, rand);
             }
             counter = 0;
         }
